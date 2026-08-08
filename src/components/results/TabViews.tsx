@@ -1,12 +1,12 @@
 import {
   Plane, Building2, UtensilsCrossed, MapPin, DollarSign, Sun,
   ExternalLink, Star, Clock, ChevronRight, Check, Thermometer,
-  CloudRain, Wind, Umbrella, Gauge, Layers, Download
+  CloudRain, Wind, Umbrella, Layers, Download
 } from "lucide-react";
 import type {
   FlightItem, HotelItem, RestaurantItem, AttractionItem,
   BudgetData, WeatherData
-} from "../utils/parsers";
+} from "../../utils/parsers";
 
 // ─── Tab Navbar ─────────────────────────────────────────────────────────
 
@@ -65,7 +65,7 @@ function ItemCard({ children, className = "" }: { children: React.ReactNode; cla
   );
 }
 
-function Tag({ children, variant = "default" }: { children: React.ReactNode; variant?: "default" | "success" | "info" | "warning" }) {
+function Tag({ children, variant = "default", className = "" }: { children: React.ReactNode; variant?: "default" | "success" | "info" | "warning"; className?: string }) {
   const colors = {
     default: "bg-gray-100 text-gray-600",
     success: "bg-green-50 text-green-700",
@@ -73,7 +73,7 @@ function Tag({ children, variant = "default" }: { children: React.ReactNode; var
     warning: "bg-amber-50 text-amber-700",
   };
   return (
-    <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${colors[variant]}`}>
+    <span className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium ${colors[variant]} ${className}`}>
       {children}
     </span>
   );
@@ -81,7 +81,7 @@ function Tag({ children, variant = "default" }: { children: React.ReactNode; var
 
 // ─── Flights Tab ────────────────────────────────────────────────────────
 
-export function FlightsTab({ items, currency }: { items: FlightItem[]; currency?: string }) {
+export function FlightsTab({ items }: { items: FlightItem[] }) {
   if (!items.length) {
     return <EmptyState icon={Plane} message="No flight information available." />;
   }

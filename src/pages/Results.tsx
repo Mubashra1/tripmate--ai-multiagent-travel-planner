@@ -407,7 +407,7 @@ export default function Results() {
               {parsedData && (() => {
                 switch (activeTab) {
                   case "flights":
-                    return <FlightsTab items={parsedData.flights} currency={currency} />;
+                    return <FlightsTab items={parsedData.flights} />;
                   case "hotels":
                     return <HotelsTab items={parsedData.hotels} />;
                   case "restaurants":
