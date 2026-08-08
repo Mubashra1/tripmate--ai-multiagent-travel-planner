@@ -429,7 +429,7 @@ function encodeSSE(data: unknown): Uint8Array {
 // ── Simulated streaming delay ──────────────────────────────────────────
 
 function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // ── Agent runner (non-AI) ──────────────────────────────────────────────
