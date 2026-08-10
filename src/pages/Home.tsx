@@ -509,7 +509,7 @@ export default function Home() {
         </div>
 
         <footer className="mt-20 text-center text-sm text-gray-400 font-sans">
-          <p>&copy; {new Date().getFullYear()} TripMate. Built with Supabase & Gemini AI.</p>
+          <p>&copy; 2026 TripMate. Plan smarter. Travel further.</p>
         </footer>
       </section>
     </div>
